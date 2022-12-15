@@ -8,16 +8,11 @@ function App() {
     return (
         <div className="App">
 
-            <PageTittle title={"This is APP component"}/>
-            <PageTittle title={"My friends"}/>
+         {/*   <PageTittle title={"This is APP component"}/>
+            <PageTittle title={"My friends"}/>*/}
 
-
-
-            <Accordion titleValue={"Menu"}/>
-            <Accordion titleValue={"User"}/>
-
-
-
+            <Accordion titleValue={"Menu"} collapsed={false}/>
+            <Accordion titleValue={"User"} collapsed={true}/>
 
             <Rating value={0}/>
             <Rating value={1}/>
