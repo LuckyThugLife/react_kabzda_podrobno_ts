@@ -2,6 +2,9 @@ import React from 'react';
 import {Rating} from "./components/Rating/Rating";
 import {Accordion} from "./components/Accordion/Accordion";
 import OnOff from "./components/OnOff/OnOff";
+import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
+import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
+// import App from "./App.css"
 
 
 function App() {
@@ -12,16 +15,19 @@ function App() {
          {/*   <PageTittle title={"This is APP component"}/>
             <PageTittle title={"My friends"}/>*/}
 
-            {/*<Accordion titleValue={"Menu"} collapsed={false}/>
-            <Accordion titleValue={"User"} collapsed={true}/>
+            {/*<UnControlledAccordion titleValue={"Menu"} collapsed={false}/>
+            <UnControlledAccordion titleValue={"User"} collapsed={true}/>
 
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
+            <UnControlledRating value={0}/>
+            <UnControlledRating value={1}/>
+            <UnControlledRating value={2}/>
+            <UnControlledRating value={3}/>
+            <UnControlledRating value={4}/>
+            <UnControlledRating value={5}/>
 */}
+
+            <UnControlledAccordion titleValue={"User"}/>
+            <UnControlledRating/>
 
             <OnOff/>
             <OnOff/>
