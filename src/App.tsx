@@ -1,6 +1,7 @@
 import React from 'react';
 import {Rating} from "./components/Rating/Rating";
 import {Accordion} from "./components/Accordion/Accordion";
+import OnOff from "./components/OnOff/OnOff";
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
          {/*   <PageTittle title={"This is APP component"}/>
             <PageTittle title={"My friends"}/>*/}
 
-            <Accordion titleValue={"Menu"} collapsed={false}/>
+            {/*<Accordion titleValue={"Menu"} collapsed={false}/>
             <Accordion titleValue={"User"} collapsed={true}/>
 
             <Rating value={0}/>
@@ -20,8 +21,11 @@ function App() {
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
+*/}
 
-
+            <OnOff/>
+            <OnOff/>
+            <OnOff/>
 
         </div>
     );

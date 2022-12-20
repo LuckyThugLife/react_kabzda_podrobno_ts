@@ -6,7 +6,7 @@ type AccordionPropsType = {
 }
 
 export function Accordion(props: AccordionPropsType) {
-    console.log("Accordion rendering")
+    console.log("OnOff rendering")
 
 
         return <div>
@@ -16,8 +16,8 @@ export function Accordion(props: AccordionPropsType) {
 
 }
 
-/*export function Accordion(props: AccordionPropsType) {
-    console.log("Accordion rendering")
+/*export function OnOff(props: AccordionPropsType) {
+    console.log("OnOff rendering")
 
     if (props.collapsed === true) {
         return <div>
