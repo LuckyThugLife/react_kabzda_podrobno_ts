@@ -16,23 +16,6 @@ export function Accordion(props: AccordionPropsType) {
 
 }
 
-/*export function OnOff(props: AccordionPropsType) {
-    console.log("OnOff rendering")
-
-    if (props.collapsed === true) {
-        return <div>
-            <AccordionTitle title={props.titleValue}/>
-
-        </div>
-    } else {
-
-        return <div>
-            <AccordionTitle title={props.titleValue}/>
-            <AccordionBody/>
-        </div>
-    }
-}*/
-
 
 type AccordionTitlePropsType = {
     title: string
