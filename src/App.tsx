@@ -5,10 +5,7 @@ import OnOff from "./components/OnOff/OnOff";
 import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 import UnControlledOnOff from "./components/UnControlledOnOff/UnControlledOnOff";
-import {UncontrolledInput} from "./components/UncontrolledInput/UncontrolledInput";
 
-import {TrackValueOfUncontrolledInput} from "./components/UncontrolledInput/TrackValueOfUncontrolledInput";
-import {GetValueOfUncontrolledInputByButtonPress} from "./components/UncontrolledInput/GetValueOfUncontrolledInputByButtonPress";
 
 // import App from "./App.css"
 
