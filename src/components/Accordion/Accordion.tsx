@@ -7,7 +7,7 @@ type AccordionPropsType = {
 }
 
 export function Accordion(props: AccordionPropsType) {
-    console.log("OnOff rendering")
+    console.log("ControlledSelect rendering")
 
 
         return <div>

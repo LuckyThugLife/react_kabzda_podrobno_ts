@@ -5,6 +5,10 @@ import OnOff from "./components/OnOff/OnOff";
 import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 import UnControlledOnOff from "./components/UnControlledOnOff/UnControlledOnOff";
+import {UncontrolledInput} from "./components/UncontrolledInput/UncontrolledInput";
+import {ControlledInput} from "./components/ControlledInput/ControlledInput";
+import {TrackValueOfUncontrolledInput} from "./components/UncontrolledInput/TrackValueOfUncontrolledInput";
+import {GetValueOfUncontrolledInputByButtonPress} from "./components/UncontrolledInput/GetValueOfUncontrolledInputByButtonPress";
 
 // import App from "./App.css"
 
@@ -19,7 +23,7 @@ function App(props: any) {
     return (
         <div className="App">
 
-            <Rating value={ratingValue}
+            {/* <Rating value={ratingValue}
                     onClick={setRatingValue}/>
             <UnControlledRating/>
             
@@ -28,21 +32,24 @@ function App(props: any) {
                        onClick={()=>{setAccordionCollapsed(!accordionCollapsed)}}/>
             <UnControlledAccordion titleValue={"User"}/>
 
-            <UnControlledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+            <UnControlledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
+            <UncontrolledInput/>
+            <ControlledInput/>
+            <TrackValueOfUncontrolledInput/>
+            <GetValueOfUncontrolledInputByButtonPress/>
 
         </div>
     );
 }
 
-    type PageTittlePropsType = {
-        title: string
-    }
+type PageTittlePropsType = {
+    title: string
+}
 
-    function PageTittle(props: PageTittlePropsType) {
-        console.log("PageTittle rendering")
-        return <h1>{props.title}</h1>
-    }
-
+function PageTittle(props: PageTittlePropsType) {
+    console.log("PageTittle rendering")
+    return <h1>{props.title}</h1>
+}
 
 
 export default App;

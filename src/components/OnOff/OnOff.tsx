@@ -6,7 +6,7 @@ on?:boolean
 }
 
 export function OnOff(props: OnOffPropsType) {
-    console.log("OnOff rendering")
+    console.log("ControlledSelect rendering")
 
 
     const onStyle= {
