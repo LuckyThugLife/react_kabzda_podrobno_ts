@@ -6,7 +6,7 @@ import {UnControlledAccordion} from "./components/UnControlledAccordion/UnContro
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 import UnControlledOnOff from "./components/UnControlledOnOff/UnControlledOnOff";
 import {UncontrolledInput} from "./components/UncontrolledInput/UncontrolledInput";
-import {ControlledInput} from "./components/ControlledInput/ControlledInput";
+
 import {TrackValueOfUncontrolledInput} from "./components/UncontrolledInput/TrackValueOfUncontrolledInput";
 import {GetValueOfUncontrolledInputByButtonPress} from "./components/UncontrolledInput/GetValueOfUncontrolledInputByButtonPress";
 
@@ -23,20 +23,6 @@ function App(props: any) {
     return (
         <div className="App">
 
-            {/* <Rating value={ratingValue}
-                    onClick={setRatingValue}/>
-            <UnControlledRating/>
-            
-            <Accordion titleValue={"Menu"}
-                       collapsed={accordionCollapsed}
-                       onClick={()=>{setAccordionCollapsed(!accordionCollapsed)}}/>
-            <UnControlledAccordion titleValue={"User"}/>
-
-            <UnControlledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
-            <UncontrolledInput/>
-            <ControlledInput/>
-            <TrackValueOfUncontrolledInput/>
-            <GetValueOfUncontrolledInputByButtonPress/>
 
         </div>
     );
