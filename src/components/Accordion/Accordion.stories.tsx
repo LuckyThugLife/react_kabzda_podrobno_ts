@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
 
 import {action} from "@storybook/addon-actions";
 import {Accordion} from "./Accordion";
@@ -10,20 +10,37 @@ export default {
     title: 'Accordion stories',
     component: Accordion,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
- /*   argTypes: {
-        backgroundColor: { control: 'color' },
-    },*/
+    /*   argTypes: {
+           backgroundColor: { control: 'color' },
+       },*/
 }/* as ComponentMeta<typeof Rating>;*/
 
 const callback = action("accordion mode change event fired")
+const onClickCallback = action("some items was clicked")
 
-export const MenuCollapsedMode = () => <Accordion titleValue={"Menu"} collapsed={true} onClick={callback}/>
-export const UsersUnCollapsedMode = () => <Accordion titleValue={"Users"} collapsed={false}  onClick={callback}/>
+export const MenuCollapsedMode = () => <Accordion titleValue={"Menu"} collapsed={true} onChange={callback} items={[]}
+                                                  onClick={onClickCallback}/>
+export const UsersUnCollapsedMode = () => <Accordion titleValue={"Users"} collapsed={false} onChange={callback}
+                                                     items={[{title: "Rustam", value: 1}, {
+                                                         title: "Fira",
+                                                         value: 2
+                                                     }, {title: "Adam", value: 3}, {title: "Aya", value: 4}]}
+                                                     onClick={onClickCallback}/>
 
 
 export const ModeChanging = () => {
     const [value, setValue] = useState<boolean>(true)
-   return <Accordion titleValue={"Users"} collapsed={value}  onClick={()=>setValue(!value)}/>
+    return <Accordion
+        titleValue={"Users"}
+        collapsed={value}
+        onChange={() => setValue(!value)}
+        items={[
+            {title: "Rustam", value: 1},
+            {title: "Fira", value: 2},
+            {title: "Adam", value: 3},
+            {title: "Aya", value: 4}
+        ]}
+        onClick={(id)=>{alert(`user with ID ${id} should be happy`)}}/>
 }
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
