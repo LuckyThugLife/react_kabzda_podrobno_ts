@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, {useReducer} from "react";
+import {reducer, TOGGLE_COLLAPSED} from "./reducer";
 
 type UnControlledAccordionPropsType = {
     titleValue: string
@@ -8,33 +9,41 @@ type UnControlledAccordionPropsType = {
 export function UnControlledAccordion(props: UnControlledAccordionPropsType) {
     console.log("UnControlledAccordion rendering")
 
-    let [collapsed,setCollapsed]=useState(false)
+    //let [collapsed,setCollapsed]=useState(false)
+    let [state, dispatch] = useReducer(reducer, {collapsed:false})
 
 
-        return <div>
-            <UnControlledAccordionTitle title={props.titleValue} onClick={()=>{setCollapsed(!collapsed)}}/>
-            {!collapsed && <UnControlledAccordionBody/>}
-        </div>
+    return <div>
+        {/*<UnControlledAccordionTitle title={props.titleValue} onClick={()=>{setCollapsed(!collapsed)}}/>*/}
+        <UnControlledAccordionTitle title={props.titleValue} onClick={() => {
+            dispatch({type: TOGGLE_COLLAPSED})
+        }}/>
+        {!state.collapsed && <UnControlledAccordionBody/>}
+    </div>
 
 }
 
 
 type UnControlledAccordionTitlePropsType = {
     title: string
-    onClick:()=>void
+    onClick: () => void
 }
-function UnControlledAccordionTitle(props:UnControlledAccordionTitlePropsType) {
+
+function UnControlledAccordionTitle(props: UnControlledAccordionTitlePropsType) {
     console.log("UnControlledAccordionTitle rendering")
 
     return (
-        <h3 onClick={()=>{props.onClick()}}>--- {props.title} ---</h3>
+        <h3 onClick={() => {
+            props.onClick()
+        }}>--- {props.title} ---</h3>
     )
 }
 
 type UnControlledAccordionBodyPropsType = {
     title?: number
 }
-function UnControlledAccordionBody(props:UnControlledAccordionBodyPropsType) {
+
+function UnControlledAccordionBody(props: UnControlledAccordionBodyPropsType) {
     console.log("UnControlledAccordionBody rendering")
     return <ul>
         <li>1</li>
