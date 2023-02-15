@@ -1,23 +1,40 @@
-import React, {useMemo, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 
 export default {
-    title: "UseState demo"
-}
-function generateData() {
-    //difficult counting
-    console.log("generateData")
-    return 34567869865
+    title: "UseEffect demo"
 }
 
-export const Example1 = () => {
-    console.log("Example1")
+export const SimpleExample = () => {
 
-//    const initValue = useMemo(generateData, [])
+    const [fake, setFake] = useState(1)
+    const [counter, setCounter] = useState(1)
+    console.log("SimpleExample")
 
-    const [counter, setCounter] = useState(generateData)//[0, function(newValue) {}]
+    useEffect(()=>{
+        console.log("useEffect every render")
+
+        document.title = counter.toString()
+        //api.getUsers().then("")
+        //setInterval
+        //IndexedDB
+        //document.getElementById
+        //document.title = "User "
+
+    })
+
+    useEffect(()=>{
+        console.log("useEffect only first render (componentDidMount)")
+        document.title = counter.toString()
+    }, [])
+
+    useEffect(()=>{
+        console.log("useEffect first render and every counter change")
+        document.title = counter.toString()
+    }, [counter])
 
     return <>
-        <button onClick={() => setCounter(state=>state + 1)}>+</button>
-        {counter}
+        Hello, {counter} {fake}
+        <button onClick={() => setCounter(counter + 1)}> count+ </button>
+        <button onClick={() => setFake(fake + 1)}> fake+ </button>
     </>
 }
