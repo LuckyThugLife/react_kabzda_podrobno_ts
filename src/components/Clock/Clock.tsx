@@ -1,8 +1,12 @@
 import React, {useEffect, useState} from "react";
+import {DigitalClockView} from "./DigitalClockView";
+import {AnalogClockView} from "./AnalogClockView";
 
-type PropsType = {}
+type PropsType = {
+    mode: "digital" | "analog"
+}
 
-const get2DigitsString = (num: number) => num < 10 ? "0" + num : num
+export const get2DigitsString = (num: number) => num < 10 ? "0" + num : num
 
 export const Clock: React.FC<PropsType> = (props) => {
 
@@ -36,11 +40,21 @@ export const Clock: React.FC<PropsType> = (props) => {
     const minutesString = get2DigitsString(date.getMinutes())
     const secondsString = get2DigitsString(date.getSeconds())*/
 
+    let view
+    switch (props.mode ) {
+        case "analog":
+            view = <AnalogClockView date={date}/>
+            break
+        case "digital":
+            view = <DigitalClockView date={date}/>
+
+    }
+
     return <div>
-        <span>{get2DigitsString(date.getHours())}</span>
-        :
-        <span>{get2DigitsString(date.getMinutes())}</span>
-        :
-        <span>{get2DigitsString(date.getSeconds())}</span>
+        {view}
     </div>
 }
+export type ClockViewPropsType = {
+    date: Date
+}
+
