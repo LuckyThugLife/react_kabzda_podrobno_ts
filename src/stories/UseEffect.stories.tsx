@@ -42,7 +42,7 @@ export const SimpleExample = () => {
 
 
 export const SetIntervalExample = () => {
-
+    const [fake, setFake] = useState(1)
     const [counter, setCounter] = useState(1)
     console.log("SetIntervalExample")
 
